@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 
-function ImageUpload() {
+function ImageUpload({ onImageSelect }) {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (event) => {
     const image = event.target.files[0];
     setSelectedImage(image);
-    console.log("handleImageChange:", selectedImage);
   };
+
+  const handleRunModel = () => {
+    // Call the callback function with the selected image
+    onImageSelect(selectedImage);
+  };
+
   return (
-    <div class="container text-center">
-      <div class="mb-3">
+    <div className="container text-center">
+      <div className="mb-3">
         <input
-          class="form-control"
+          className="form-control"
           type="file"
           id="inputGroupFile04"
           aria-describedby="inputGroupFileAddon04"
@@ -23,14 +28,15 @@ function ImageUpload() {
       </div>
 
       <button
-        class="btn btn-secondary"
+        className="btn btn-secondary"
         type="button"
         id="inputGroupFileAddon04"
-        onClick={console.log("Button Click:", selectedImage)}
+        onClick={handleRunModel}
       >
         Run Model
       </button>
     </div>
   );
 }
+
 export default ImageUpload;
