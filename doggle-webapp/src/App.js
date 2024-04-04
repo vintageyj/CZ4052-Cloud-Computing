@@ -5,8 +5,9 @@ import React, { useState } from "react";
 function App() {
   const [state, setState] = useState("image_upload");
   const [error, setError] = useState(false);
+  // const [imageSelected, setImageSelected] = useState(false);
 
-  function imageSelected() {
+  function onImageSelect() {
     console.log("IMAGE SELECTED!");
     setState("loading");
 
@@ -14,7 +15,12 @@ function App() {
     setTimeout(() => {
       // API call completed
       setState("results");
-    }, 2000); // 2000 milliseconds = 2 seconds
+    }, 2000);
+  }
+
+  function goBack() {
+    console.log("GO BACK!");
+    setState("image_upload");
   }
 
   if (error == "true") {
@@ -36,7 +42,7 @@ function App() {
           <div class="container">
             <p style={{ fontSize: "200%" }}>Doggle</p>
           </div>
-          <ImageUpload onImageSelect={imageSelected} />
+          <ImageUpload onImageSelect={onImageSelect} />
         </header>
       </div>
     );
@@ -64,6 +70,9 @@ function App() {
         <header className="App-header">
           <div class="container">
             <p style={{ fontSize: "200%" }}>Results!</p>
+            <button className="btn btn-primary" onClick={goBack}>
+              Go back!
+            </button>
           </div>
         </header>
       </div>
