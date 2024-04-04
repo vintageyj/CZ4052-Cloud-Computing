@@ -5,7 +5,7 @@ import React, { useState } from "react";
 function App() {
   const [state, setState] = useState("image_upload");
   const [error, setError] = useState(false);
-  // const [imageSelected, setImageSelected] = useState(false);
+  const [imageSelected, setImageSelected] = useState(false);
 
   function onImageSelect() {
     console.log("IMAGE SELECTED!");
@@ -40,7 +40,10 @@ function App() {
       <div className="App">
         <header className="App-header">
           <div class="container">
-            <p style={{ fontSize: "200%" }}>Doggle</p>
+            <p style={{ fontSize: "200%" }} hidden={imageSelected}>
+              Doggle
+            </p>
+            <img hidden={!imageSelected}>{/* add image here */}</img>
           </div>
           <ImageUpload onImageSelect={onImageSelect} />
         </header>
