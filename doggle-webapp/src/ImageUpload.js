@@ -1,16 +1,9 @@
 import React, { useState } from "react";
 
-function ImageUpload({ onImageSelect }) {
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  const handleImageChange = (event) => {
-    const image = event.target.files[0];
-    setSelectedImage(image);
-  };
-
-  const handleRunModel = () => {
-    // Call the callback function with the selected image
-    onImageSelect(selectedImage);
+function ImageUpload({ onSelectImage }) {
+  const handleSelectImage = (event) => {
+    console.log(event.target.files);
+    onSelectImage(URL.createObjectURL(event.target.files[0]));
   };
 
   return (
@@ -23,18 +16,9 @@ function ImageUpload({ onImageSelect }) {
           aria-describedby="inputGroupFileAddon04"
           aria-label="Upload"
           accept="image/png, image/gif, image/jpeg"
-          onChange={handleImageChange}
+          onChange={handleSelectImage}
         />
       </div>
-
-      <button
-        className="btn btn-secondary"
-        type="button"
-        id="inputGroupFileAddon04"
-        onClick={handleRunModel}
-      >
-        Run Model
-      </button>
     </div>
   );
 }
