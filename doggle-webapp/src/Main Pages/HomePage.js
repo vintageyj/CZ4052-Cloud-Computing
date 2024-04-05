@@ -8,6 +8,7 @@ import ResultsPage from "./ResultsPage";
 function Home() {
   const [state, setState] = useState("image_upload");
   const [error, setError] = useState();
+  // Selected image data will be stored in imageSelected
   const [imageSelected, setImageSelected] = useState();
 
   function onSelectImage(URLobject) {
