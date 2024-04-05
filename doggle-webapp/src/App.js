@@ -1,51 +1,19 @@
-import "./App.css";
-import ImageUpload from "./ImageUpload";
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Header from "./Navigation Bar/Header";
+import About from "./About Page/About";
+import Home from "./Main Pages/HomePage";
 
 function App() {
-  const [state, setState] = useState("loading");
-  const [error, setError] = useState(false);
-
-  if (error == "true") {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <div class="container">
-            <p style={{ fontSize: "200%" }}>ERROR!</p>
-          </div>
-        </header>
-      </div>
-    );
-  }
-
-  if (state == "image_upload") {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <div class="container">
-            <p style={{ fontSize: "200%" }}>Doggle</p>
-          </div>
-          <ImageUpload />
-        </header>
-      </div>
-    );
-  }
-
-  if (state == "loading") {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <div class="d-flex justify-content-center">
-            <div
-              class="spinner-border"
-              style={{ width: "10rem", height: "10rem" }}
-              role="status"
-            ></div>
-          </div>
-        </header>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
