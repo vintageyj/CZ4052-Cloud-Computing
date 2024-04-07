@@ -4,25 +4,33 @@ import React, { useState } from "react";
 import ErrorPage from "./ErrorPage";
 import LoadingScreen from "./LoadingScreen";
 import ResultsPage from "./ResultsPage";
+import getBreed from "../GetBreed";
 
 function Home() {
   const [state, setState] = useState("image_upload");
   const [error, setError] = useState();
   // Selected image data will be stored in imageSelected
   const [imageSelected, setImageSelected] = useState();
+  // Result of the API call will be stored in result
+  const [result, setResult] = useState(null);
 
-  function onSelectImage(URLobject) {
-    setImageSelected(URLobject);
+  function onSelectImage(targetFile) {
+    setImageSelected(URL.createObjectURL(targetFile));
   }
 
-  function runModel() {
+  async function runModel() {
     setState("loading");
 
-    // Simulate API call with a delay of 2 seconds
-    setTimeout(() => {
-      // API call completed
-      setState("results");
-    }, 2000);
+    const result = getBreed(imageSelected);
+    setResult(result);
+    
+    // API call completed
+    setState("results");
+    // // Simulate API call with a delay of 2 seconds
+    // setTimeout(() => {
+    //   // API call completed
+    //   setState("results");
+    // }, 2000);
   }
 
   function goBack() {
@@ -62,7 +70,7 @@ function Home() {
   }
 
   if (state == "results") {
-    return <ResultsPage backButtonOnClick={goBack} />;
+    return <ResultsPage backButtonOnClick={goBack} results={result} />;
   }
 }
 
