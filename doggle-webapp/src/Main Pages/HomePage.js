@@ -45,7 +45,13 @@ function Home() {
         <header className="App-header">
           <div className="container">
             <p style={{ fontSize: "200%" }}>Doggle</p>
-            <img hidden={!previewImage} src={previewImage}></img>
+            <div className="text-center mb-3">
+              <img
+                hidden={!previewImage}
+                src={previewImage}
+                className="rounded"
+              ></img>
+            </div>
           </div>
           <ImageUpload onSelectImage={onSelectImage} />
           <button
