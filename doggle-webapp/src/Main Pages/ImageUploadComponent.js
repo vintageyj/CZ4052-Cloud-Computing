@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function ImageUpload({ onSelectImage }) {
   const handleSelectImage = (event) => {
     console.log(event.target.files);
-    onSelectImage(URL.createObjectURL(event.target.files[0]));
+    onSelectImage(event.target.files[0]);
   };
 
   return (
