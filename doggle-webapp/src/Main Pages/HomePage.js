@@ -26,11 +26,6 @@ function Home() {
     
     // API call completed
     setState("results");
-    // // Simulate API call with a delay of 2 seconds
-    // setTimeout(() => {
-    //   // API call completed
-    //   setState("results");
-    // }, 2000);
   }
 
   function goBack() {
