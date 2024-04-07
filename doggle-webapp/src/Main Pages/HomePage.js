@@ -14,14 +14,14 @@ function Home() {
   // Result of the API call will be stored in result
   const [result, setResult] = useState(null);
 
-  function onSelectImage(targetFile) {
-    setImageSelected(URL.createObjectURL(targetFile));
+  function onSelectImage(FileObject) {
+    setImageSelected(FileObject);
   }
 
   async function runModel() {
     setState("loading");
 
-    const result = getBreed(imageSelected);
+    const result = await getBreed(imageSelected);
     setResult(result);
     
     // API call completed
@@ -48,7 +48,7 @@ function Home() {
         <header className="App-header">
           <div className="container">
             <p style={{ fontSize: "200%" }}>Doggle</p>
-            <img hidden={!imageSelected} src={imageSelected}></img>
+            {/* <img hidden={!imageSelected} src={URL.createObjectURL(imageSelected)}></img> */}
           </div>
           <ImageUpload onSelectImage={onSelectImage} />
           <button
