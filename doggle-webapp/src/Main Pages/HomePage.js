@@ -9,6 +9,7 @@ import getBreed from "../GetBreed";
 function Home() {
   const [state, setState] = useState("image_upload");
   const [error, setError] = useState();
+  const [previewImage, setPreviewImage] = useState();
   // Selected image data will be stored in imageSelected
   const [imageSelected, setImageSelected] = useState();
   // Result of the API call will be stored in result
@@ -16,21 +17,22 @@ function Home() {
 
   function onSelectImage(FileObject) {
     setImageSelected(FileObject);
+    setPreviewImage(URL.createObjectURL(FileObject));
   }
 
   async function runModel() {
     setState("loading");
-
     const result = await getBreed(imageSelected);
-    setResult(result);
-    
+
     // API call completed
+    setResult(result);
     setState("results");
   }
 
   function goBack() {
     setState("image_upload");
     setImageSelected();
+    setPreviewImage();
   }
 
   if (error) {
@@ -43,7 +45,7 @@ function Home() {
         <header className="App-header">
           <div className="container">
             <p style={{ fontSize: "200%" }}>Doggle</p>
-            {/* <img hidden={!imageSelected} src={URL.createObjectURL(imageSelected)}></img> */}
+            <img hidden={!previewImage} src={previewImage}></img>
           </div>
           <ImageUpload onSelectImage={onSelectImage} />
           <button
