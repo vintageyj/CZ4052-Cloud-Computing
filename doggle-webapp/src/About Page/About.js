@@ -15,24 +15,42 @@ function About() {
             a dog, and let Doggle do the rest. Not only does Doggle provide
             accurate breed identification, but it also offers fascinating fun
             facts about each breed, allowing you to learn more about your furry
-            friends.
-          </p>
-          <p>
-            Whether you're a dog enthusiast or simply curious about different
-            breeds, Doggle is here to make your dog identification experience
-            enjoyable and educational. With Doggle, you can explore the diverse
-            world of dog breeds and deepen your understanding of man's best
-            friend. Join us in celebrating the unique characteristics and traits
-            of every dog breed with Doggle!
+            friends. Whether you're a dog enthusiast or simply curious about
+            different breeds, Doggle is here to make your dog identification
+            experience enjoyable and educational.
           </p>
         </div>
         <div className="col-md-6">
           <h2>Our Team</h2>
-          <p>Meet the amazing team behind this project.</p>
+          <p>Meet the amazing team behind this project:</p>
           <ul>
-            <li>Dion Toh Siyong</li>
-            <li>Tan Yue Jun</li>
-            <li>Jewel Wee</li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/dsiyong/"
+                target="_blank"
+                class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+              >
+                Dion Toh Siyong
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/yuejuntan/"
+                target="_blank"
+                class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+              >
+                Tan Yue Jun
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/jewelwee"
+                target="_blank"
+                class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+              >
+                Jewel Wee
+              </a>
+            </li>
           </ul>
         </div>
       </div>
