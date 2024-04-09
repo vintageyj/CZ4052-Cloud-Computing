@@ -6,6 +6,7 @@ import LoadingScreen from "./LoadingScreen";
 import ResultsPage from "./ResultsPage";
 import getBreed from "../GetBreed";
 import HeroBanner from "../Hero Banner/HeroBanner";
+import fetchCSVData from "../GetBreedInfo";
 
 function Home() {
   const [state, setState] = useState("image_upload");
@@ -15,6 +16,9 @@ function Home() {
   const [imageSelected, setImageSelected] = useState();
   // Result of the API call will be stored in result
   const [result, setResult] = useState(null);
+  // All the breeds data will be stored here
+  const [breedsData, setBreedsData] = useState();
+  
 
   function onSelectImage(FileObject) {
     setImageSelected(FileObject);
@@ -24,8 +28,10 @@ function Home() {
   async function runModel() {
     setState("loading");
     const result = await getBreed(imageSelected);
+    const breedsData = await fetchCSVData();
 
     // API call completed
+    setBreedsData(breedsData);
     setResult(result);
     setState("results");
   }
@@ -85,7 +91,7 @@ function Home() {
   }
 
   if (state === "results") {
-    return <ResultsPage backButtonOnClick={goBack} results={result} />;
+    return <ResultsPage backButtonOnClick={goBack} results={result} imageSelected={imageSelected} breedsData={breedsData}/>;
   }
 }
 
