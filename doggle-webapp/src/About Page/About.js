@@ -8,15 +8,22 @@ function About() {
       </header>
       <div className="row mt-5">
         <div className="col-md-6">
-          <h2>Lorem ipsum</h2>
+          <h2>What we do</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
-            augue velit. Donec vitae tortor consequat, facilisis nulla at,
-            hendrerit dolor.
+            Doggle is your go-to platform for identifying dog breeds using
+            cutting-edge computer vision technology. Simply upload a picture of
+            a dog, and let Doggle do the rest. Not only does Doggle provide
+            accurate breed identification, but it also offers fascinating fun
+            facts about each breed, allowing you to learn more about your furry
+            friends.
           </p>
           <p>
-            Nullam sollicitudin convallis eros, nec convallis urna facilisis in.
-            Curabitur nec augue sapien. Fusce quis diam ac dolor feugiat auctor.
+            Whether you're a dog enthusiast or simply curious about different
+            breeds, Doggle is here to make your dog identification experience
+            enjoyable and educational. With Doggle, you can explore the diverse
+            world of dog breeds and deepen your understanding of man's best
+            friend. Join us in celebrating the unique characteristics and traits
+            of every dog breed with Doggle!
           </p>
         </div>
         <div className="col-md-6">
