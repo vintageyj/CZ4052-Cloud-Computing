@@ -3,15 +3,15 @@
 }
 
 .logo {
-  width: 40px; /* Set the width of the logo */
-  height: auto; /* Let the height adjust to maintain aspect ratio */
-  margin-right: 20px;
+  width: 40px;
+  height: auto;
+  margin-inline: 20px;
 }
 
 .navbar-nav .nav-item {
-  margin-right: 20px; /* Adjust the right margin as needed */
+  margin-right: 20px;
 }
 
 .navbar-nav .nav-item:last-child {
-  margin-right: 0; /* Remove margin from the last item to avoid extra spacing */
+  margin-right: 0;
 }
