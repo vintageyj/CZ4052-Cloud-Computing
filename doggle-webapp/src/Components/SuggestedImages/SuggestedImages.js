@@ -12,9 +12,6 @@ import image9 from "./Images/pug.jpeg";
 
 function SuggestedImages({ onSelectImage }) {
   const handleSelectImage = (event, clickedImage) => {
-    // Log the clicked image URL
-    console.log("Selected Image:", clickedImage);
-
     // Fetch the image as a Blob
     fetch(clickedImage)
       .then((response) => response.blob())

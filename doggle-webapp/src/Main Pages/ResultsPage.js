@@ -46,10 +46,6 @@ function ResultsPage({
         <div className="container">
           <p class="header">Your Dog is a...</p>
           <div>
-            {/* <img
-                src={URL.createObjectURL(imageSelected)}
-                className="rounded"
-              ></img> */}
             {!encyclopedia && (
               <p class="class-label">{results.data["Class Label"]}</p>
             )}
