@@ -1,0 +1,14 @@
+.image_preview {
+  min-height: 40vh; /* Set the maximum height */
+  max-height: 40vh; /* Set the maximum height */
+  width: auto; /* Let the width adjust to maintain aspect ratio */
+  cursor: pointer;
+}
+
+.run_model_btn {
+  background-color: #ff960c !important;
+  border-color: #ffffff !important;
+  opacity: 0.9 !important;
+  font-weight: bold !important;
+  padding: 10px, 20px !important;
+}

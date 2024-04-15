@@ -8,6 +8,7 @@ import getBreed from "../GetBreed";
 import HeroBanner from "../Hero Banner/HeroBanner";
 import fetchCSVData from "../GetBreedInfo";
 import SuggestedImages from "../Components/SuggestedImages/SuggestedImages";
+import "./HomePage.css"; // Import CSS file
 
 function Home() {
   const [state, setState] = useState("image_upload");
@@ -68,24 +69,17 @@ function Home() {
               <img
                 hidden={!previewImage}
                 src={previewImage}
-                className="rounded"
+                className="rounded image_preview"
               ></img>
             </div>
           </div>
           <ImageUpload onSelectImage={onSelectImage} />
           <button
-            className="btn btn-secondary"
+            className="btn btn-secondary run_model_btn"
             type="button"
             id="inputGroupFileAddon04"
             onClick={runModel}
             disabled={!imageSelected}
-            style={{
-              backgroundColor: "#ff960c",
-              borderColor: "#ffffff",
-              opacity: 0.9,
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
           >
             Run Model
           </button>
