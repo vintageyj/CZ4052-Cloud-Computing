@@ -97,8 +97,8 @@ function Home() {
       <ResultsPage
         backButtonOnClick={goBack}
         results={result}
-        imageSelected={imageSelected}
         breedsData={breedsData}
+        encyclopedia={false}
       />
     );
   }
