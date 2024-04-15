@@ -7,6 +7,7 @@ import ResultsPage from "./ResultsPage";
 import getBreed from "../GetBreed";
 import HeroBanner from "../Hero Banner/HeroBanner";
 import fetchCSVData from "../GetBreedInfo";
+import SuggestedImages from "../Components/SuggestedImages/SuggestedImages";
 
 function Home() {
   const [state, setState] = useState("image_upload");
@@ -18,7 +19,6 @@ function Home() {
   const [result, setResult] = useState(null);
   // All the breeds data will be stored here
   const [breedsData, setBreedsData] = useState();
-  
 
   function onSelectImage(FileObject) {
     setImageSelected(FileObject);
@@ -71,7 +71,7 @@ function Home() {
               ></img>
             </div>
           </div>
-          <ImageUpload onSelectImage={onSelectImage}/>
+          <ImageUpload onSelectImage={onSelectImage} />
           <button
             className="btn btn-secondary"
             type="button"
@@ -79,16 +79,17 @@ function Home() {
             onClick={runModel}
             disabled={!imageSelected}
             style={{
-              backgroundColor: '#ff960c',
-              borderColor: '#ffffff',
+              backgroundColor: "#ff960c",
+              borderColor: "#ffffff",
               opacity: 0.9,
-              fontWeight: 'bold',
-              padding: '10px 20px'
+              fontWeight: "bold",
+              padding: "10px 20px",
             }}
           >
             Run Model
           </button>
         </div>
+        <SuggestedImages />
       </div>
     );
   }
@@ -98,7 +99,14 @@ function Home() {
   }
 
   if (state === "results") {
-    return <ResultsPage backButtonOnClick={goBack} results={result} imageSelected={imageSelected} breedsData={breedsData}/>;
+    return (
+      <ResultsPage
+        backButtonOnClick={goBack}
+        results={result}
+        imageSelected={imageSelected}
+        breedsData={breedsData}
+      />
+    );
   }
 }
 
