@@ -7,6 +7,8 @@ import ResultsPage from "./ResultsPage";
 import getBreed from "../GetBreed";
 import HeroBanner from "../Hero Banner/HeroBanner";
 import fetchCSVData from "../GetBreedInfo";
+import SuggestedImages from "../Components/SuggestedImages/SuggestedImages";
+import "./HomePage.css"; // Import CSS file
 
 function Home() {
   const [state, setState] = useState("image_upload");
@@ -18,7 +20,6 @@ function Home() {
   const [result, setResult] = useState(null);
   // All the breeds data will be stored here
   const [breedsData, setBreedsData] = useState();
-  
 
   function onSelectImage(FileObject) {
     setImageSelected(FileObject);
@@ -27,6 +28,7 @@ function Home() {
 
   async function runModel() {
     setState("loading");
+    console.log("DEBUG2:", imageSelected);
     const result = await getBreed(imageSelected);
     const breedsData = await fetchCSVData();
 
@@ -67,28 +69,22 @@ function Home() {
               <img
                 hidden={!previewImage}
                 src={previewImage}
-                className="rounded"
+                className="rounded image_preview"
               ></img>
             </div>
           </div>
-          <ImageUpload onSelectImage={onSelectImage}/>
+          <ImageUpload onSelectImage={onSelectImage} />
           <button
-            className="btn btn-secondary"
+            className="btn btn-secondary run_model_btn"
             type="button"
             id="inputGroupFileAddon04"
             onClick={runModel}
             disabled={!imageSelected}
-            style={{
-              backgroundColor: '#ff960c',
-              borderColor: '#ffffff',
-              opacity: 0.9,
-              fontWeight: 'bold',
-              padding: '10px 20px'
-            }}
           >
             Run Model
           </button>
         </div>
+        <SuggestedImages onSelectImage={onSelectImage} />
       </div>
     );
   }
@@ -98,7 +94,14 @@ function Home() {
   }
 
   if (state === "results") {
-    return <ResultsPage backButtonOnClick={goBack} results={result} imageSelected={imageSelected} breedsData={breedsData}/>;
+    return (
+      <ResultsPage
+        backButtonOnClick={goBack}
+        results={result}
+        imageSelected={imageSelected}
+        breedsData={breedsData}
+      />
+    );
   }
 }
 
