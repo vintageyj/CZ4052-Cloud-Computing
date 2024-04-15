@@ -1,0 +1,8 @@
+.custom-navbar-color {
+  background-color: #30435d !important;
+}
+
+.logo {
+  width: 40px; /* Set the width of the logo */
+  height: auto; /* Let the height adjust to maintain aspect ratio */
+}

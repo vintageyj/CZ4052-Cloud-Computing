@@ -1,5 +1,5 @@
 import "../App.css";
-import ImageUpload from "./ImageUploadComponent";
+import ImageUpload from "../Components/ImageUpload/ImageUploadComponent";
 import React, { useState } from "react";
 import ErrorPage from "./ErrorPage";
 import LoadingScreen from "./LoadingScreen";
