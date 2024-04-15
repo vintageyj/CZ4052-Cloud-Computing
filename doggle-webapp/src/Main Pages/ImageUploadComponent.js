@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./ImageUploadComponent.css";
 
 function ImageUpload({ onSelectImage }) {
   const handleSelectImage = (event) => {

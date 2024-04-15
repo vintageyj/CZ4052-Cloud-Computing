@@ -55,7 +55,7 @@ function Home() {
           subtext="Discover your dog's breed and explore fascinating facts with Doggle!"
           textColor="#000000"
         />
-        <div className="App-header">
+        <div className="App-body">
           <div className="container">
             <p className="mt-3" hidden={previewImage}>
               Upload an image of your dog, and we will detect its breed!
@@ -71,13 +71,20 @@ function Home() {
               ></img>
             </div>
           </div>
-          <ImageUpload onSelectImage={onSelectImage} />
+          <ImageUpload onSelectImage={onSelectImage}/>
           <button
             className="btn btn-secondary"
             type="button"
             id="inputGroupFileAddon04"
             onClick={runModel}
             disabled={!imageSelected}
+            style={{
+              backgroundColor: '#ff960c',
+              borderColor: '#ffffff',
+              opacity: 0.9,
+              fontWeight: 'bold',
+              padding: '10px 20px'
+            }}
           >
             Run Model
           </button>

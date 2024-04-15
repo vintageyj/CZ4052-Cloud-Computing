@@ -1,12 +1,14 @@
 import { Button } from "bootstrap";
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Header.css";
 
 function Header() {
   const logo = "../images/dog_logo.svg";
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    // <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark custom-navbar-color">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           {/* <img src={logo} alt="issues" /> */}

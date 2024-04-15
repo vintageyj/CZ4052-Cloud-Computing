@@ -1,0 +1,65 @@
+.Results-body {
+    background-color: #4c6383;
+    min-height: 95.23vh;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    padding-bottom: 6%;
+  }
+
+
+.header {
+    text-align: left;
+    padding-top: 3.5%;
+    padding-bottom: 25px;
+}
+
+.class-label {
+    font-size: 200%;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    font-style: oblique;
+    padding-bottom: 5%
+}
+
+.breed-chracteristics-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 5%
+  }
+  
+  .breed-characteristics {
+    /* Additional styles for the content */
+    flex: 1; /* Take up remaining space in the container */
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    width: 45%;
+    text-align: left;
+    border: 3.5px solid #fff;
+    border-radius: 15px;
+    column-gap: 5%;
+  }
+  
+  .item {
+    padding-top: 15px;
+    padding-left: 15px;
+  }
+
+  .item h3 {
+    font-size: 65%;
+  }
+
+  .breed-desc {
+    text-align: left;
+    padding-left: 5%;
+    padding-bottom: 1%;
+    font-size: 90%;
+}
+
+.confidence {
+    font-size: 50%;
+    text-align: right;
+    padding-bottom: 6%
+}

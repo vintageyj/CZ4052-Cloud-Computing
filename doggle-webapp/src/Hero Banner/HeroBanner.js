@@ -12,6 +12,7 @@ function HeroBanner({ imageUrl, title, subtext, textColor }) {
         backgroundPosition: "center", // Align image to the right
         backgroundRepeat: "no-repeat",
         backgroundColor: "#FF950A",
+        alignSelf: 'flex-start'
       }}
     >
       <div className="container col-xxl-8 px-4 py-5">
