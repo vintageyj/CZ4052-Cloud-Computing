@@ -27,6 +27,7 @@ function Home() {
 
   async function runModel() {
     setState("loading");
+    console.log("DEBUG2:", imageSelected);
     const result = await getBreed(imageSelected);
     const breedsData = await fetchCSVData();
 
@@ -89,7 +90,7 @@ function Home() {
             Run Model
           </button>
         </div>
-        <SuggestedImages />
+        <SuggestedImages onSelectImage={onSelectImage} />
       </div>
     );
   }

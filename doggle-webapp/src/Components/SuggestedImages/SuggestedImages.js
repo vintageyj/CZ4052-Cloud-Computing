@@ -12,11 +12,27 @@ import image8 from "./Images/rottweiler.jpeg";
 import image9 from "./Images/pug.jpeg";
 
 function SuggestedImages({ onSelectImage }) {
-  const suggestedImages = [image1, image2];
+  const handleSelectImage = (event, clickedImage) => {
+    // Log the clicked image URL
+    console.log("Selected Image:", clickedImage);
 
-  const handleSelectImage = (imageUrl) => {
-    console.log("SelectedImage!", imageUrl);
-    // onSelectImage(imageUrl);
+    // Fetch the image as a Blob
+    fetch(clickedImage)
+      .then((response) => response.blob())
+      .then((blob) => {
+        // Create a new File object from the Blob
+        const file = new File([blob], "dot.png", { type: blob.type });
+
+        // Log the File object
+        console.log("File object:", file);
+
+        // Pass the File object to onSelectImage function
+        onSelectImage(file);
+      })
+      .catch((error) => {
+        // Handle errors
+        console.error("Error fetching image:", error);
+      });
   };
 
   return (
@@ -33,9 +49,21 @@ function SuggestedImages({ onSelectImage }) {
         <div className="carousel-item active" data-bs-interval="2000">
           <div className="container-fluid">
             <div className="row align-items-center overflow-hidden">
-              <img className="col-sm-3 mx-auto suggested_img" src={image1} />
-              <img className="col-sm-3 mx-auto suggested_img" src={image2} />
-              <img className="col-sm-3 mx-auto suggested_img" src={image3} />
+              <img
+                className="col-sm-3 mx-auto suggested_img"
+                src={image1}
+                onClick={(event) => handleSelectImage(event, image1)}
+              />
+              <img
+                className="col-sm-3 mx-auto suggested_img"
+                src={image2}
+                onClick={(event) => handleSelectImage(event, image2)}
+              />
+              <img
+                className="col-sm-3 mx-auto suggested_img"
+                src={image3}
+                onClick={(event) => handleSelectImage(event, image3)}
+              />
             </div>
           </div>
         </div>
@@ -43,9 +71,21 @@ function SuggestedImages({ onSelectImage }) {
         <div className="carousel-item" data-bs-interval="2000">
           <div className="container-fluid">
             <div className="row align-items-center">
-              <img className="col-sm-3 mx-auto suggested_img" src={image4} />
-              <img className="col-sm-3 mx-auto suggested_img" src={image5} />
-              <img className="col-sm-3 mx-auto suggested_img" src={image6} />
+              <img
+                className="col-sm-3 mx-auto suggested_img"
+                src={image4}
+                onClick={(event) => handleSelectImage(event, image4)}
+              />
+              <img
+                className="col-sm-3 mx-auto suggested_img"
+                src={image5}
+                onClick={(event) => handleSelectImage(event, image5)}
+              />
+              <img
+                className="col-sm-3 mx-auto suggested_img"
+                src={image6}
+                onClick={(event) => handleSelectImage(event, image6)}
+              />
             </div>
           </div>
         </div>
@@ -53,30 +93,42 @@ function SuggestedImages({ onSelectImage }) {
         <div className="carousel-item" data-bs-interval="2000">
           <div className="container-fluid">
             <div className="row align-items-center">
-              <img className="col-sm-3 mx-auto suggested_img" src={image7} />
-              <img className="col-sm-3 mx-auto suggested_img" src={image8} />
-              <img className="col-sm-3 mx-auto suggested_img" src={image9} />
+              <img
+                className="col-sm-3 mx-auto suggested_img"
+                src={image7}
+                onClick={(event) => handleSelectImage(event, image7)}
+              />
+              <img
+                className="col-sm-3 mx-auto suggested_img"
+                src={image8}
+                onClick={(event) => handleSelectImage(event, image8)}
+              />
+              <img
+                className="col-sm-3 mx-auto suggested_img"
+                src={image9}
+                onClick={(event) => handleSelectImage(event, image9)}
+              />
             </div>
           </div>
         </div>
       </div>
       <button
-        class="carousel-control-prev"
+        className="carousel-control-prev"
         type="button"
         data-bs-target="#suggestedImages"
         data-bs-slide="prev"
       >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
       </button>
       <button
-        class="carousel-control-next"
+        className="carousel-control-next"
         type="button"
         data-bs-target="#suggestedImages"
         data-bs-slide="next"
       >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
       </button>
     </div>
   );
