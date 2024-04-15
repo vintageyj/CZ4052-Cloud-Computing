@@ -3,7 +3,14 @@ import React from "react";
 function LoadingScreen() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header
+        className="App-header"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <div className="d-flex justify-content-center">
           <div
             className="spinner-border"
