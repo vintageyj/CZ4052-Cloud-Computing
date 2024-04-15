@@ -13,6 +13,7 @@ function Encyclopedia() {
       setState("loading");
       try {
         const data = await getData();
+        data.pop(); // To remove ghost item
         setBreedsData(data);
         setState("data_fetched");
       } catch (error) {
