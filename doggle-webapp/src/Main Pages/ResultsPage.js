@@ -4,20 +4,41 @@ import "./ResultsPage.css";
 function ResultsPage({
   backButtonOnClick,
   results,
-  imageSelected,
   breedsData,
+  encyclopedia = false,
 }) {
-  console.log("Debug", results.data);
-  // console.log("Debug", breedsData);
-  const classID = results.data["Class ID"];
-  const breedName = breedsData[classID]["Breed Name"];
-  const height = breedsData[classID]["Height"].split(" ")[0];
-  const weight = breedsData[classID]["Weight"];
-  const lifeSpan = breedsData[classID]["Life Span"].split(" ")[0];
-  const breedGroup = breedsData[classID]["Breed Group"];
-  const aboutTheBreed = breedsData[classID]["About the breed"];
-  const moreInfoURL = breedsData[classID]["URL"];
-  const imageURL = breedsData[classID]["Image URL"];
+  let breedName,
+    height,
+    weight,
+    lifeSpan,
+    breedGroup,
+    aboutTheBreed,
+    moreInfoURL,
+    imageURL,
+    classID;
+
+  if (!encyclopedia) {
+    // If coming from detection
+    classID = results.data["Class ID"];
+    breedName = breedsData[classID]["Breed Name"];
+    height = breedsData[classID]["Height"].split(" ")[0];
+    weight = breedsData[classID]["Weight"];
+    lifeSpan = breedsData[classID]["Life Span"].split(" ")[0];
+    breedGroup = breedsData[classID]["Breed Group"];
+    aboutTheBreed = breedsData[classID]["About the breed"];
+    moreInfoURL = breedsData[classID]["URL"];
+    imageURL = breedsData[classID]["Image URL"];
+  } else {
+    // If coming from encyclopedia
+    breedName = results["Breed Name"];
+    height = results["Height"].split(" ")[0];
+    weight = results["Weight"];
+    lifeSpan = results["Life Span"].split(" ")[0];
+    breedGroup = results["Breed Group"];
+    aboutTheBreed = results["About the breed"];
+    moreInfoURL = results["URL"];
+    imageURL = results["Image URL"];
+  }
 
   return (
     <div className="App">
@@ -25,11 +46,9 @@ function ResultsPage({
         <div className="container">
           <p class="header">Your Dog is a...</p>
           <div>
-            {/* <img
-                src={URL.createObjectURL(imageSelected)}
-                className="rounded"
-              ></img> */}
-            <p class="class-label">{results.data["Class Label"]}</p>
+            {!encyclopedia && (
+              <p class="class-label">{results.data["Class Label"]}</p>
+            )}
             <div className="breed-chracteristics-container">
               <img src={imageURL} style={{ paddingLeft: "5%" }}></img>
               <div class="grid-container">
@@ -66,9 +85,11 @@ function ResultsPage({
               </div>
             </div>
             <p className="breed-desc">{aboutTheBreed}</p>
-            <p className="confidence">
-              Model Prediction Confidence: {results.data["Confidence"]}%
-            </p>
+            {!encyclopedia && (
+              <p className="confidence">
+                Model Prediction Confidence: {results.data["Confidence"]}%
+              </p>
+            )}
           </div>
           <button className="btn btn-primary" onClick={backButtonOnClick}>
             Go back!
