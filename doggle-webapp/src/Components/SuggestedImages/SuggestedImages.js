@@ -1,6 +1,5 @@
 import React from "react";
-import "./SuggestedImages.css"; // Import CSS file
-// Import local images
+import "./SuggestedImages.css";
 import image1 from "./Images/dhole.jpeg";
 import image2 from "./Images/toy_terrier.jpeg";
 import image3 from "./Images/dachshund.jpeg";
@@ -40,8 +39,9 @@ function SuggestedImages({ onSelectImage }) {
       id="suggestedImages"
       className="carousel slide"
       style={{
-        paddingInline: "10%",
-        paddingBottom: "3%",
+        paddingInline: "10vw",
+        paddingBottom: "3vh",
+        paddingTop: "3vh",
       }}
     >
       <p>Try Doggling these images by clicking on them:</p>
