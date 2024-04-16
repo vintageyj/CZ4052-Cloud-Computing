@@ -11,7 +11,7 @@ import SuggestedImages from "../Components/SuggestedImages/SuggestedImages";
 import "./HomePage.css"; // Import CSS file
 
 function Home() {
-  const [state, setState] = useState("loading");
+  const [state, setState] = useState("image_upload");
   const [error, setError] = useState();
   const [previewImage, setPreviewImage] = useState();
   // Selected image data will be stored in imageSelected
