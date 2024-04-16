@@ -34,23 +34,11 @@ function LoadingScreen() {
 
   return (
     <div className="App">
-      <header
-        className="App-header"
-        style={{
-          display: "flex",
-          flexDirection: "column", // Added to stack content vertically
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <header className="App-header">
         <div className="container text-center">
           <div className="row align-items-center">
             <div className="col">
-              <div
-                className="spinner-border"
-                style={{ width: "10rem", height: "10rem" }}
-                role="status"
-              />
+              <div className="spinner-border loading_wheel" role="status" />
             </div>
           </div>
           <div className="row align-items-center">
