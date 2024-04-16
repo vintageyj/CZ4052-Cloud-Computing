@@ -11,7 +11,7 @@ function ImageUpload({ onSelectImage }) {
     <div className="container text-center">
       <div className="mb-3">
         <input
-          className="form-control"
+          className="form-control upload"
           type="file"
           id="inputGroupFile04"
           aria-describedby="inputGroupFileAddon04"
