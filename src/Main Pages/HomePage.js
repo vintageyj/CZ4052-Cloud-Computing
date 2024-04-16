@@ -7,6 +7,7 @@ import ResultsPage from "./ResultsPage";
 import getBreed from "../GetBreed";
 import HeroBanner from "../Hero Banner/HeroBanner";
 import fetchCSVData from "../GetBreedInfo";
+import fetchJSONData from "../GetBreedInfo";
 
 function Home() {
   const [state, setState] = useState("image_upload");
@@ -28,7 +29,7 @@ function Home() {
   async function runModel() {
     setState("loading");
     const result = await getBreed(imageSelected);
-    const breedsData = await fetchCSVData();
+    const breedsData = await fetchJSONData();
     console.log("Debug Homepage", breedsData);
 
     // API call completed
