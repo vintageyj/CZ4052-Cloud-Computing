@@ -34,7 +34,7 @@ function SuggestedImages({ onSelectImage }) {
   return (
     <div
       id="suggestedImages"
-      className="carousel slide"
+      className="carousel slide suggested_carousel"
       style={{
         paddingInline: "10vw",
         paddingBottom: "3vh",

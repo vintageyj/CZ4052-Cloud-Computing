@@ -4,3 +4,7 @@
   width: auto; /* Let the width adjust to maintain aspect ratio */
   cursor: pointer;
 }
+
+.suggested_carousel {
+  width: 100%;
+}
