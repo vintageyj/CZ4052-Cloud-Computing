@@ -2,8 +2,8 @@ import React from "react";
 import "./ResultsPage.css";
 
 function ResultsPage({ backButtonOnClick, results, imageSelected, breedsData}) {
-  // console.log("Debug", results.data);
-  // console.log("Debug", breedsData);
+  console.log("Debug results.data", results.data);
+  console.log("Debug breedsData", breedsData);
   const classID = results.data['Class ID'];
   const breedName = breedsData[classID]['Breed Name'];
   const height = breedsData[classID]['Height'].split(" ")[0];

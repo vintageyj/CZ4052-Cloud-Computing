@@ -29,6 +29,7 @@ function Home() {
     setState("loading");
     const result = await getBreed(imageSelected);
     const breedsData = await fetchCSVData();
+    console.log("Debug Homepage", breedsData);
 
     // API call completed
     setBreedsData(breedsData);
