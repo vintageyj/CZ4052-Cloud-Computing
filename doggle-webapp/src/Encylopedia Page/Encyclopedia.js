@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Encyclopedia.css";
-import fetchCSVData from "../GetBreedInfo";
+import fetchJSONData from "../GetBreedInfo";
 import ResultsPage from "../Main Pages/ResultsPage";
 
 function Encyclopedia() {
@@ -13,7 +13,6 @@ function Encyclopedia() {
       setState("loading");
       try {
         const data = await getData();
-        data.pop(); // To remove ghost item
         setBreedsData(data);
         setState("data_fetched");
       } catch (error) {
@@ -26,7 +25,7 @@ function Encyclopedia() {
   }, []);
 
   async function getData() {
-    return fetchCSVData();
+    return fetchJSONData();
   }
 
   function selectBreed(breedData) {
