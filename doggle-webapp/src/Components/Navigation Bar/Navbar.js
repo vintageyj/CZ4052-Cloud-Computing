@@ -8,9 +8,9 @@ function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark custom-navbar-color">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <a className="navbar-brand" href="/">
           <img src={logo} alt="issues" className="logo" />
-        </Link>
+        </a>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
