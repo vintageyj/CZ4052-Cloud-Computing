@@ -1,6 +1,6 @@
 import "../App.css";
 import ImageUpload from "../Components/ImageUpload/ImageUploadComponent";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ErrorPage from "./ErrorPage";
 import LoadingScreen from "./LoadingScreen";
 import ResultsPage from "./ResultsPage";
@@ -20,6 +20,11 @@ function Home() {
   const [result, setResult] = useState(null);
   // All the breeds data will be stored here
   const [breedsData, setBreedsData] = useState();
+
+  useEffect(() => {
+    // Scroll to the top of the page when state changes
+    window.scrollTo(0, 0);
+  }, [state]); // This effect will run whenever 'state' changes
 
   function onSelectImage(FileObject) {
     setImageSelected(FileObject);
