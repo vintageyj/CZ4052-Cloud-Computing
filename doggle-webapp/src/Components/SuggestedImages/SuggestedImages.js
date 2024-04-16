@@ -17,7 +17,7 @@ function SuggestedImages({ onSelectImage }) {
       .then((response) => response.blob())
       .then((blob) => {
         // Create a new File object from the Blob
-        const file = new File([blob], "dot.png", { type: blob.type });
+        const file = new File([blob], "clickedImage.png", { type: blob.type });
 
         // Log the File object
         console.log("File object:", file);
@@ -34,7 +34,7 @@ function SuggestedImages({ onSelectImage }) {
   return (
     <div
       id="suggestedImages"
-      className="carousel slide"
+      className="carousel slide suggested_carousel"
       style={{
         paddingInline: "10vw",
         paddingBottom: "3vh",
