@@ -1,0 +1,10 @@
+.message {
+  min-height: 100px;
+  /* background-color: blue; */
+  margin-top: 3vh;
+  padding-bottom: 20vh;
+}
+
+.submessage {
+  font-size: small;
+}
