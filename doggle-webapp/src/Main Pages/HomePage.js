@@ -6,7 +6,7 @@ import LoadingScreen from "./LoadingScreen";
 import ResultsPage from "./ResultsPage";
 import getBreed from "../GetBreed";
 import HeroBanner from "../Hero Banner/HeroBanner";
-import fetchCSVData from "../GetBreedInfo";
+import fetchJSONData from "../GetBreedInfo";
 import SuggestedImages from "../Components/SuggestedImages/SuggestedImages";
 import "./HomePage.css"; // Import CSS file
 
@@ -29,7 +29,7 @@ function Home() {
   async function runModel() {
     setState("loading");
     const result = await getBreed(imageSelected);
-    const breedsData = await fetchCSVData();
+    const breedsData = await fetchJSONData();
 
     // API call completed
     setBreedsData(breedsData);
