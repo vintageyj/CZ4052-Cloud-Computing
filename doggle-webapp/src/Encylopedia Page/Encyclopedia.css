@@ -17,7 +17,11 @@
 }
 
 .card {
-  margin: 0.5rem;
+  margin: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Adjust the value to control the amount of pop-up */
 }
 
 .card img {

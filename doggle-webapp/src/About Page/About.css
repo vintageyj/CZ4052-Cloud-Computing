@@ -1,0 +1,50 @@
+.about-container {
+  margin-top: -50px;
+  padding-top: 6%;
+  background-color: #4c6383;
+  color: white;
+}
+
+.about-details {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4%
+  }
+
+.col-md-6 {
+  width: 80%;
+  align-self: center;
+  padding-bottom: 3%;
+}
+
+.about-details p {
+  line-height: 2.5; /* Set the line height */
+  font-weight: 500;
+}
+
+.members-container {
+  display: flex;
+}
+
+.member-card {
+  margin: 1.5rem;
+  border: #fff solid 3px;
+  border-radius: 18px;
+}
+
+.member-card img {
+  height: auto;
+  min-height: 206px;
+  min-width: 200px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.member-card p {
+  text-align: center;
+  font-weight: 600;
+}
+
+.member-card:hover {
+  transform: translateY(-5px); /* Adjust the value to control the amount of pop-up */
+}

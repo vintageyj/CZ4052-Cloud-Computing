@@ -1,12 +1,35 @@
 import React from "react";
+import "./About.css";
+import image_dion from "./Member_Images/dion.jpg";
+import image_jewel from "./Member_Images/jewel.jpg";
+import image_yj from "./Member_Images/yj.jpg";
 
 function About() {
+
+  const teamMembers = [
+    {
+      name: "Dion Toh Siyong",
+      linkedin: "https://www.linkedin.com/in/dsiyong/",
+      image: image_dion,
+    },
+    {
+      name: "Jewel Wee Xin Yu",
+      linkedin: "https://www.linkedin.com/in/jewelwee",
+      image: image_jewel,
+    },
+    {
+      name: "Tan Yue Jun",
+      linkedin: "https://www.linkedin.com/in/yuejuntan/",
+      image: image_yj,
+    },
+  ];
+
   return (
-    <div className="container">
+    <div className="about-container">
       <header>
         <h1 className="text-center mt-5">About Us</h1>
       </header>
-      <div className="row mt-5">
+      <div className="about-details">
         <div className="col-md-6">
           <h2>What we do</h2>
           <p>
@@ -23,35 +46,25 @@ function About() {
         <div className="col-md-6">
           <h2>Our Team</h2>
           <p>Meet the amazing team behind this project:</p>
-          <ul>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/dsiyong/"
-                target="_blank"
-                class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-              >
-                Dion Toh Siyong
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/yuejuntan/"
-                target="_blank"
-                class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-              >
-                Tan Yue Jun
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/jewelwee"
-                target="_blank"
-                class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-              >
-                Jewel Wee
-              </a>
-            </li>
-          </ul>
+          <div className="members-container">
+            {teamMembers.map((member) => (
+                <div className="member-card">
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noreferrer">
+                  <img
+                    src={member.image}
+                    className="card-img-top"
+                    alt="..."
+                  />
+                  </a>
+                  <div className="card-body">
+                    <p className="card-title">{member.name}</p>
+                  </div>
+                </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
