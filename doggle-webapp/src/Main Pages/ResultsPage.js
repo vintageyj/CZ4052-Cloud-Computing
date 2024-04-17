@@ -44,7 +44,7 @@ function ResultsPage({
     <div className="App">
       <header className="Results-body">
         <div className="container">
-          <p class="header">Your Dog is a...</p>
+          <p class="header">{!encyclopedia ? "Your Dog is a..." : ""}</p>
           <div>
             {!encyclopedia && (
               <p class="class-label">{results.data["Class Label"]}</p>
