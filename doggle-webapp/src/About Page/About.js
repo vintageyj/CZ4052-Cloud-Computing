@@ -5,7 +5,6 @@ import image_jewel from "./Member_Images/jewel.jpg";
 import image_yj from "./Member_Images/yj.jpg";
 
 function About() {
-
   const teamMembers = [
     {
       name: "Dion Toh Siyong",
@@ -48,21 +47,14 @@ function About() {
           <p>Meet the amazing team behind this project:</p>
           <div className="members-container">
             {teamMembers.map((member) => (
-                <div className="member-card">
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noreferrer">
-                  <img
-                    src={member.image}
-                    className="card-img-top"
-                    alt="..."
-                  />
-                  </a>
-                  <div className="card-body">
-                    <p className="card-title">{member.name}</p>
-                  </div>
+              <div className="member-card">
+                <a href={member.linkedin} target="_blank" rel="noreferrer">
+                  <img src={member.image} className="card-img-top" alt="..." />
+                </a>
+                <div className="card-body">
+                  <p className="card-title">{member.name}</p>
                 </div>
+              </div>
             ))}
           </div>
         </div>

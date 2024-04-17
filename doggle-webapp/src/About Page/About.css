@@ -3,13 +3,14 @@
   padding-top: 6%;
   background-color: #4c6383;
   color: white;
+  min-height: 100vh;
 }
 
 .about-details {
-    display: flex;
-    flex-direction: column;
-    padding-top: 4%
-  }
+  display: flex;
+  flex-direction: column;
+  padding-top: 4%;
+}
 
 .col-md-6 {
   width: 80%;
@@ -28,7 +29,7 @@
 
 .member-card {
   margin: 1.5rem;
-  border: #fff solid 3px;
+  border: #fff solid 1.5px;
   border-radius: 18px;
 }
 
@@ -46,5 +47,7 @@
 }
 
 .member-card:hover {
-  transform: translateY(-5px); /* Adjust the value to control the amount of pop-up */
+  transform: translateY(
+    -5px
+  ); /* Adjust the value to control the amount of pop-up */
 }
