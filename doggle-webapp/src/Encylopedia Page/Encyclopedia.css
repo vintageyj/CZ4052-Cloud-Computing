@@ -6,10 +6,11 @@
   padding-bottom: 6%;
 }
 
-.header {
-  text-align: center;
+.enc-container p {
+  font-size: 130%;
+  font-weight: 600;
+  font-style: italic;
 }
-
 .card-container {
   display: flex;
   flex-wrap: wrap;

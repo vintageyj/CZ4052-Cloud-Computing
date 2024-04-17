@@ -25,7 +25,7 @@ function About() {
 
   return (
     <div className="about-container">
-      <header>
+      <header style={{ fontStyle: 'italic' }}>
         <h1 className="text-center mt-5">About Us</h1>
       </header>
       <div className="about-details">

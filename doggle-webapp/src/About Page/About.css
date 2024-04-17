@@ -9,7 +9,7 @@
 .about-details {
   display: flex;
   flex-direction: column;
-  padding-top: 4%;
+  padding-top: 2%;
 }
 
 .col-md-6 {

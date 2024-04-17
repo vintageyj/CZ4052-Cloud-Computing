@@ -54,8 +54,8 @@ function Encyclopedia() {
       // Loaded Screen
       <div className="App">
         <header className="Results-body">
-          <div className="container">
-            <p className="header">Our Encyclopedia of Dogs</p>
+          <div className="container enc-container">
+            <p className="header">Our Dog Breed Encyclopedia</p>
             <div className="card-container">
               {breedsData.map((data) => (
                 <div
