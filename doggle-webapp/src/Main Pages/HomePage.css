@@ -12,3 +12,11 @@
   font-weight: bold !important;
   padding: 10px, 20px !important;
 }
+
+.home-body {
+  padding-top: 5%;
+}
+
+.home-body p {
+  padding-bottom: 2%;
+}

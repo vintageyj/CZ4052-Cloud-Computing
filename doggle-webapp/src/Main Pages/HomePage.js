@@ -61,7 +61,7 @@ function Home() {
           subtext="Discover your dog's breed and explore fascinating facts with Doggle!"
           textColor="#000000"
         />
-        <div className="App-body">
+        <div className="App-body home-body">
           <div className="container">
             <p className="mt-3" hidden={previewImage}>
               Upload an image of your dog, and we will detect its breed!
