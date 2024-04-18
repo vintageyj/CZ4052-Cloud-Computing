@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import "./ResultsPage.css";
 
 function ResultsPage({
@@ -44,10 +45,22 @@ function ResultsPage({
     <div className="App">
       <header className="Results-body">
         <div className="container">
-          <p class="header">{!encyclopedia ? "Your Dog is a..." : ""}</p>
+          {!encyclopedia && (
+          <p class="header">{"Your Dog is a..."}</p>
+          )}
+          {encyclopedia && (
+          <div className="back">
+          <button className="btn back-button" onClick={backButtonOnClick}>
+          ← Back
+          </button>
+          </div>
+          )}
           <div>
             {!encyclopedia && (
               <p class="class-label">{results.data["Class Label"]}</p>
+            )}
+            {encyclopedia && (
+              <p class="class-label">{breedName}</p>
             )}
             <div className="breed-chracteristics-container">
               <img src={imageURL} style={{ paddingLeft: "5%" }}></img>
@@ -91,9 +104,16 @@ function ResultsPage({
               </p>
             )}
           </div>
-          <button className="btn btn-primary" onClick={backButtonOnClick}>
-            Go back!
-          </button>
+          {!encyclopedia && (
+          <div className="nav-buttons">
+            <Link to="/">
+              <button className="btn">← Upload Another Image!</button>
+            </Link>
+            <Link to="/encyclopedia">
+              <button className="btn">Explore More Breeds! →</button>
+            </Link>
+          </div>
+          )}
         </div>
       </header>
     </div>

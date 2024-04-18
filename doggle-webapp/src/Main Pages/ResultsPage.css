@@ -1,24 +1,35 @@
 .Results-body {
-    background-color: #4c6383;
-    min-height: 95.23vh;
-    font-size: calc(10px + 2vmin);
-    color: white;
-    padding-bottom: 6%;
-  }
-
+  background-color: #4c6383;
+  min-height: 95.23vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-bottom: 6%;
+}
 
 .header {
-    text-align: left !important;
-    padding-top: 3.5%;
-    padding-bottom: 25px;
+  text-align: left !important;
+  padding-top: 3.5%;
+  padding-bottom: 25px;
+}
+
+.back {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 2%;
+}
+
+.back-button {
+  font-weight: bold;
+  color: #fff;
+  padding: 10px 20px;
 }
 
 .class-label {
-    font-size: 200%;
-    font-weight: bold;
-    font-family: "Times New Roman", Times, serif;
-    font-style: oblique;
-    padding-bottom: 5%
+  font-size: 200%;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  font-style: oblique;
+  padding-bottom: 5%
 }
 
 .breed-chracteristics-container {
@@ -27,39 +38,60 @@
     padding-bottom: 5%
   }
   
-  .breed-characteristics {
-    /* Additional styles for the content */
-    flex: 1; /* Take up remaining space in the container */
-  }
+.breed-characteristics {
+  /* Additional styles for the content */
+  flex: 1; /* Take up remaining space in the container */
+}
 
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-    width: 45%;
-    text-align: left;
-    border: 3.5px solid #fff;
-    border-radius: 15px;
-    column-gap: 5%;
-  }
-  
-  .item {
-    padding-top: 15px;
-    padding-left: 15px;
-  }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  width: 45%;
+  text-align: left;
+  border: 3.5px solid #fff;
+  /* border: 3.5px solid #ed9a2c; */
+  border-radius: 15px;
+  column-gap: 5%;
+  /* background-color: rgba(237, 154, 44, 0.8); */
+}
 
-  .item h3 {
-    font-size: 65%;
-  }
+.item {
+  padding-top: 15px;
+  padding-left: 15px;
+}
 
-  .breed-desc {
-    text-align: left;
-    padding-left: 5%;
-    padding-bottom: 1%;
-    font-size: 90%;
+.item h3 {
+  font-size: 65%;
+  /* color: #ed9a2c; */
+}
+
+.breed-desc {
+  text-align: left;
+  padding-left: 5%;
+  padding-bottom: 1%;
+  font-size: 90%;
+  line-height: 2;
 }
 
 .confidence {
-    font-size: 50%;
-    text-align: right;
-    padding-bottom: 6%
+  font-size: 50%;
+  text-align: right;
+  padding-bottom: 6%
+}
+
+.nav-buttons {
+  padding-top: 6%;
+  display: flex;
+  justify-content: space-between; /* or space-around */
+
+}
+
+.nav-buttons button {
+  background-color: #ed9a2c !important;
+  border-color: #ffffff !important;
+  opacity: 0.9;
+  font-weight: bold;
+  color: #fff;
+  min-height: fit-content;
+  padding: 10px 20px;
 }
