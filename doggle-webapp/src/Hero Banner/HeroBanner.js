@@ -1,4 +1,5 @@
 import React from "react";
+import banner_image from "./hero_banner_image.png";
 
 function HeroBanner({ imageUrl, title, subtext, textColor }) {
   const textStyle = { color: textColor };
@@ -7,12 +8,13 @@ function HeroBanner({ imageUrl, title, subtext, textColor }) {
     <div
       className="container-fluid px-0"
       style={{
-        backgroundImage: `url(${imageUrl})`,
+        backgroundImage: `url(${banner_image})`,
         backgroundSize: "contain", // Use contain to maintain aspect ratio
         backgroundPosition: "center", // Align image to the right
         backgroundRepeat: "no-repeat",
-        backgroundColor: "#FF950A",
-        alignSelf: 'flex-start'
+        backgroundColor: "#e6e9f0",
+        alignSelf: 'flex-start',
+        paddingLeft: '50%',
       }}
     >
       <div className="container col-xxl-8 px-4 py-5">
