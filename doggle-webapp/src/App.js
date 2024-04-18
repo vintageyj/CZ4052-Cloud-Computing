@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Header from "./Components/Navigation Bar/Navbar";
 import About from "./About Page/About";
 import Home from "./Main Pages/HomePage";
-import Encyclopedia from "./Encylopedia Page/Encyclopedia";
+import Encyclopedia from "./Encylcopedia Page/Encyclopedia";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/encylopedia" element={<Encyclopedia />} />
+        <Route path="/encylcopedia" element={<Encyclopedia />} />
       </Routes>
     </div>
   );
