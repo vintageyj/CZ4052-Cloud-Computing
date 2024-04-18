@@ -1,0 +1,7 @@
+.dogImage {
+  background-position: right 10% bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #e6e9f0;
+  align-self: flex-start;
+}
