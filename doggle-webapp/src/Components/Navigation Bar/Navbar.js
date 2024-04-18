@@ -24,7 +24,7 @@ function Header() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/encylcopedia">
+              <a className="nav-link" href="/encyclopedia">
                 Encyclopedia
               </a>
             </li>

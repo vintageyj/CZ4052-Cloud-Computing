@@ -30,3 +30,8 @@
   height: auto;
   min-height: 206px;
 }
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
