@@ -13,12 +13,12 @@ async function getBreed(imageSelected) {
           image: base64String,
         };
         const endpoint_url =
-          "https://1dq0bh9gui.execute-api.ap-southeast-1.amazonaws.com/production/api-model";
+          "https://pibkhi87jj.execute-api.ap-southeast-1.amazonaws.com/production/predict";
         // Make the POST request to the API endpoint
         axios
           .post(endpoint_url, payload)
           .then((results) => {
-            // console.log(results.data['Confidence']);
+            console.log("DEBUG",results.data['Confidence']);
             resolve(results); // Resolve the promise with the result
           })
           .catch((error) => {
