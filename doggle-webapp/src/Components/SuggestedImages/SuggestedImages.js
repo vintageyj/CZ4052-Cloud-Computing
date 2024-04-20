@@ -41,7 +41,9 @@ function SuggestedImages({ onSelectImage }) {
         paddingTop: "3vh",
       }}
     >
-      <p className="suggestion">Try Doggling these images by clicking on them!</p>
+      <p className="suggestion">
+        Try Doggling these images by clicking on them!
+      </p>
       <div className="carousel-inner">
         <div className="carousel-item active" data-bs-interval="2000">
           <div className="container-fluid">
