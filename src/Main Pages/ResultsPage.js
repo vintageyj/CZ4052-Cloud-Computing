@@ -106,9 +106,9 @@ function ResultsPage({
           </div>
           {!encyclopedia && (
           <div className="nav-buttons">
-            <Link to="/">
-              <button className="btn">← Upload Another Image!</button>
-            </Link>
+            <button className="btn" onClick={backButtonOnClick}>
+            ← Upload Another Image!
+            </button>
             <Link to="/encyclopedia">
               <button className="btn">Explore More Breeds! →</button>
             </Link>
